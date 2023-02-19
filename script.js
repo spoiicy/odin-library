@@ -54,6 +54,7 @@ const book3 = new book('Godaan','Premchand','50','Read');
 const book4 = new book('Godaan','Premchand','50','Read');
 const book5 = new book('Godaan','Premchand','50','Read');
 const book6 = new book('Godaan','Premchand','50','Read');
+const book7 = new book('Godaan','Premchand','50','Read');
 
 myLibrary.push(book1);
 myLibrary.push(book2);
@@ -61,5 +62,6 @@ myLibrary.push(book3);
 myLibrary.push(book4);
 myLibrary.push(book5);
 myLibrary.push(book6);
+myLibrary.push(book7);
 addBooksToLibrary(myLibrary);
 console.log(myLibrary);

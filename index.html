@@ -13,8 +13,34 @@
             <h1>My Library</h1>
             <button id="add-book" type="button">Add book</button>
         </div>
-        <div class="card-container"></div>
+        <div class="card-container">
+        </div>
+
+        <div class="modal" id="modal">
+            <form action="#" method="post">
+                <label for="title">Title <br></label>
+                <input type="text" name="title" id="title">
+                <br>
+                <label for="author">Author <br></label>
+                <input type="text" name="author" id="author">
+                <br>
+
+                <label for="pages">Pages <br></label>
+                <input type="number" name="pages" id="pages">
+                <br>
+                <label for="read_status">Read? <br></label>
+                <input type="radio" name="read_status" id="read_status" value="Read">
+                <label for="read_status">Read</label>
+                <input type="radio" name="read_status" id="read_status" value="Not Read">
+                <label for="read_status">Not Read</label>
+                <br>
+                <button type="button">Submit</button>
+
+            </form>
+        </div>
+        
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
