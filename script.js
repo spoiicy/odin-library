@@ -1,4 +1,4 @@
-
+const form = document.querySelector('form');
 
 const add_book_div = document.querySelector("#add-book");
 
@@ -52,6 +52,19 @@ function addBook(card_container,new_book){
         book_status.classList.add('book-status');
         card_element.appendChild(book_status);
 
+        const label = document.createElement('label');
+        label.setAttribute('for','read');
+        label.textContent = 'Read:';
+        card_element.appendChild(label);
+
+        const checkBox = document.createElement('input');
+        checkBox.setAttribute('type','checkbox');
+        checkBox.setAttribute('id','read');
+        if(new_book.read_status == 'Read'){
+            checkBox.checked = true;
+        }
+        card_element.appendChild(checkBox);
+
         card_container.appendChild(card_element);
 
 
@@ -65,7 +78,17 @@ function addBook(card_container,new_book){
             console.log(myLibrary);
         });
 
-        
+        checkBox.addEventListener('click',()=>{
+            const index = myLibrary.findIndex((book)=>{
+                return(book.title == book_title.textContent);
+            });
+            if(checkBox.checked){
+                myLibrary[index].read_status = 'Read';
+            }
+            else{
+                myLibrary[index].read_status = 'Not Read';
+            }
+        });
         
 
         
@@ -82,15 +105,26 @@ function addBooksToLibrary(myLibrary){
 }
 
 
+
 function collectAndAddInfo(){
+    
+    let new_book = new book(
+        form.title.value,
+        form.author.value,
+        form.pages.value,
+        form.read_status.value
+    );
+    
+    
     const card_container = document.querySelector('.card-container');
 
-    const form_title = document.querySelector('#title').value;
+    /*const form_title = document.querySelector('#title').value;
     const form_author = document.querySelector('#author').value;
     const form_pages = document.querySelector('#pages').value;
     const form_read_status = document.querySelector('#read_status').value;
     
     const new_book = new book(form_title,form_author,form_pages,form_read_status);
+    */
     myLibrary.push(new_book); 
     
     addBook(card_container,new_book);
@@ -138,3 +172,14 @@ addBooksToLibrary(myLibrary);
 
 
 
+
+
+
+
+const label = document.createElement('label');
+label.setAttribute('for','read');
+label.textContent = 'Read';
+
+const checkBox = document.createElement('input');
+checkBox.setAttribute('type','checkbox');
+checkBox.setAttribute('id','read');
