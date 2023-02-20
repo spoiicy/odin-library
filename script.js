@@ -117,22 +117,11 @@ function collectAndAddInfo(){
     
     
     const card_container = document.querySelector('.card-container');
-
-    /*const form_title = document.querySelector('#title').value;
-    const form_author = document.querySelector('#author').value;
-    const form_pages = document.querySelector('#pages').value;
-    const form_read_status = document.querySelector('#read_status').value;
     
-    const new_book = new book(form_title,form_author,form_pages,form_read_status);
-    */
     myLibrary.push(new_book); 
     
     addBook(card_container,new_book);
     console.log(myLibrary);
-
-    
-       
-
 
 }
 
@@ -142,11 +131,6 @@ const form_button = document.querySelector('.modal button');
 form_button.addEventListener('click',()=>{
     collectAndAddInfo();
 });
-
-
-
-
-
 
 
 
@@ -165,21 +149,3 @@ myLibrary.push(book4);
 myLibrary.push(book5);
 
 addBooksToLibrary(myLibrary);
-
-
-
-
-
-
-
-
-
-
-
-const label = document.createElement('label');
-label.setAttribute('for','read');
-label.textContent = 'Read';
-
-const checkBox = document.createElement('input');
-checkBox.setAttribute('type','checkbox');
-checkBox.setAttribute('id','read');
