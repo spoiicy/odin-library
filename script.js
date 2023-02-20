@@ -46,11 +46,6 @@ function addBook(card_container,new_book){
         book_pages.textContent = new_book.pages;
         book_pages.classList.add('book-pages');
         card_element.appendChild(book_pages);
-        
-        const book_status = document.createElement('p');
-        book_status.textContent = new_book.read_status;
-        book_status.classList.add('book-status');
-        card_element.appendChild(book_status);
 
         const label = document.createElement('label');
         label.setAttribute('for','read');
